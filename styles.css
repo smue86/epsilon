@@ -1452,30 +1452,30 @@ h1, h2, h3, h4 {
         font-size: 0.85rem;
     }
 
-    /* Ascension / Path - Mobile: simple vertical list */
+    /* Ascension / Path - Mobile: markers on line, text to right */
     .ascension {
         padding: var(--space-2xl) var(--space-md);
     }
 
     .path-container {
         padding: var(--space-md) 0;
+        padding-left: var(--space-md);
     }
 
     .path-line {
-        left: 20px;
+        left: calc(var(--space-md) + 18px);
         transform: none;
     }
 
     .path-line::before,
     .path-line::after {
-        left: 0;
-        transform: none;
+        display: none;
     }
 
     .tier {
-        display: block;
+        display: flex;
+        align-items: center;
         padding: var(--space-sm) 0;
-        padding-left: 50px;
     }
 
     .tier.left,
@@ -1489,6 +1489,7 @@ h1, h2, h3, h4 {
         justify-content: flex-start;
         text-align: left;
         flex-direction: row;
+        align-items: center;
         margin: 0;
     }
 
@@ -1515,6 +1516,8 @@ h1, h2, h3, h4 {
         width: 36px;
         height: 36px;
         flex-shrink: 0;
+        position: relative;
+        z-index: 2;
     }
 
     .tier-numeral {
@@ -1522,16 +1525,16 @@ h1, h2, h3, h4 {
     }
 
     .tier-marker.final {
-        width: 50px;
-        height: 50px;
+        width: 44px;
+        height: 44px;
     }
 
     .tier-marker.final .tier-numeral {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
     }
 
     .tier.center {
-        padding-left: 50px;
+        padding: var(--space-sm) 0;
     }
 
     .tier.center .tier-content {
@@ -1543,20 +1546,21 @@ h1, h2, h3, h4 {
 
     .tier.center .tier-info {
         margin-top: 0;
-        margin-left: var(--space-sm);
     }
 
     .tier-info {
-        margin-left: var(--space-sm);
+        margin-left: var(--space-md);
     }
 
     .tier-info h4 {
         font-size: 1rem;
+        text-align: left;
     }
 
     .tier-info p {
         font-size: 0.75rem;
         max-width: none;
+        text-align: left;
     }
 
     /* Tenets */
