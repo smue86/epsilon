@@ -1452,7 +1452,7 @@ h1, h2, h3, h4 {
         font-size: 0.85rem;
     }
 
-    /* Ascension / Path */
+    /* Ascension / Path - Mobile: simple vertical list */
     .ascension {
         padding: var(--space-2xl) var(--space-md);
     }
@@ -1462,34 +1462,48 @@ h1, h2, h3, h4 {
     }
 
     .path-line {
-        left: 30px;
+        left: 20px;
+        transform: none;
+    }
+
+    .path-line::before,
+    .path-line::after {
+        left: 0;
         transform: none;
     }
 
     .tier {
-        padding: var(--space-md) 0;
-        padding-left: 60px;
-        padding-right: 0;
+        display: block;
+        padding: var(--space-sm) 0;
+        padding-left: 50px;
     }
 
     .tier.left,
-    .tier.right {
-        padding-left: 70px;
-        padding-right: 0;
+    .tier.right,
+    .tier.center {
+        justify-content: flex-start;
+    }
+
+    .tier-content {
+        width: 100%;
+        justify-content: flex-start;
+        text-align: left;
+        flex-direction: row;
+        margin: 0;
     }
 
     .tier.left .tier-content,
     .tier.right .tier-content {
-        justify-content: flex-start;
-        text-align: left;
-        flex-direction: row;
+        margin: 0;
     }
 
-    .tier.left .tier-info {
+    .tier.left .tier-info,
+    .tier.right .tier-info {
         order: 2;
     }
 
-    .tier.left .tier-marker {
+    .tier.left .tier-marker,
+    .tier.right .tier-marker {
         order: 1;
     }
 
@@ -1498,49 +1512,50 @@ h1, h2, h3, h4 {
     }
 
     .tier-marker {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
     }
 
     .tier-numeral {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
     }
 
     .tier-marker.final {
-        width: 60px;
-        height: 60px;
+        width: 50px;
+        height: 50px;
     }
 
     .tier-marker.final .tier-numeral {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
 
     .tier.center {
-        padding-left: 70px;
+        padding-left: 50px;
     }
 
     .tier.center .tier-content {
         flex-direction: row;
         text-align: left;
+        width: 100%;
+        align-items: center;
     }
 
     .tier.center .tier-info {
         margin-top: 0;
-        margin-left: var(--space-md);
+        margin-left: var(--space-sm);
+    }
+
+    .tier-info {
+        margin-left: var(--space-sm);
     }
 
     .tier-info h4 {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .tier-info p {
-        font-size: 0.8rem;
-        max-width: none;
-    }
-
-    .tier.left .tier-info p,
-    .tier.right .tier-info p,
-    .tier.center .tier-info p {
+        font-size: 0.75rem;
         max-width: none;
     }
 
