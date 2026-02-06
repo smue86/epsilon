@@ -768,7 +768,7 @@ h1, h2, h3, h4 {
     top: 100%;
     width: 1px;
     height: 100%;
-    background: linear-gradient(180deg, var(--gold), var(--stone));
+    background: linear-gradient(180deg, var(--stone), var(--gold));
     opacity: 0.3;
 }
 
