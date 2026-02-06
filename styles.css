@@ -693,7 +693,7 @@ h1, h2, h3, h4 {
     background: rgba(201, 162, 39, 0.05);
 }
 
-/* Ascension / Tier Ladder */
+/* Ascension / The Path */
 .ascension {
     padding: var(--space-3xl) var(--space-xl);
     background: linear-gradient(180deg, var(--void) 0%, var(--obsidian) 100%);
@@ -701,19 +701,55 @@ h1, h2, h3, h4 {
     overflow: hidden;
 }
 
-.tier-ladder {
-    max-width: 700px;
+.path-container {
+    max-width: 900px;
     margin: 0 auto;
     position: relative;
+    padding: var(--space-xl) 0;
 }
 
+/* Central path line */
+.path-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg,
+        var(--stone) 0%,
+        var(--gold) 50%,
+        var(--gold-light) 100%
+    );
+    transform: translateX(-50%);
+    opacity: 0.4;
+}
+
+.path-line::before,
+.path-line::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 8px;
+    background: var(--stone);
+    border-radius: 50%;
+}
+
+.path-line::before {
+    top: 0;
+}
+
+.path-line::after {
+    bottom: 0;
+    background: var(--gold);
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.5);
+}
+
+/* Tier base styles */
 .tier {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: var(--space-lg);
-    align-items: center;
-    padding: var(--space-md) 0;
     position: relative;
+    padding: var(--space-lg) 0;
     opacity: 0.5;
     transition: all 0.4s var(--ease-out);
 }
@@ -722,58 +758,150 @@ h1, h2, h3, h4 {
     opacity: 1;
 }
 
-.tier[data-tier="7"] { opacity: 1; }
-.tier[data-tier="7"] .tier-marker { background: var(--gold); color: var(--void); }
+.tier-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
 
+/* Left-aligned tiers */
+.tier.left {
+    padding-right: 55%;
+}
+
+.tier.left .tier-content {
+    justify-content: flex-end;
+    text-align: right;
+}
+
+.tier.left .tier-info {
+    order: 1;
+}
+
+.tier.left .tier-marker {
+    order: 2;
+}
+
+/* Right-aligned tiers */
+.tier.right {
+    padding-left: 55%;
+}
+
+.tier.right .tier-content {
+    justify-content: flex-start;
+    text-align: left;
+}
+
+/* Center tier (Epsilon) */
+.tier.center {
+    padding: var(--space-xl) 0;
+    opacity: 1;
+}
+
+.tier.center .tier-content {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.tier.center .tier-info {
+    margin-top: var(--space-md);
+}
+
+/* Connector lines from tiers to center path */
+.tier-connector {
+    position: absolute;
+    top: 50%;
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0.3;
+    transition: opacity 0.4s var(--ease-out);
+}
+
+.tier.left .tier-connector {
+    right: 50%;
+    left: auto;
+    width: 5%;
+    background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.tier.right .tier-connector {
+    left: 50%;
+    right: auto;
+    width: 5%;
+    background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.tier:hover .tier-connector {
+    opacity: 0.6;
+}
+
+/* Tier marker */
 .tier-marker {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--gold);
+    background: var(--obsidian);
     position: relative;
     z-index: 2;
+    flex-shrink: 0;
     transition: all 0.4s var(--ease-out);
 }
 
 .tier:hover .tier-marker {
     background: rgba(201, 162, 39, 0.1);
+    box-shadow: 0 0 30px rgba(201, 162, 39, 0.2);
+}
+
+.tier-marker.final {
+    width: 80px;
+    height: 80px;
+    background: var(--gold);
+    border: 2px solid var(--gold-light);
+    box-shadow:
+        0 0 40px rgba(201, 162, 39, 0.4),
+        inset 0 0 20px rgba(255, 255, 255, 0.1);
 }
 
 .tier-numeral {
     font-family: var(--font-display);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--gold);
 }
 
-.tier[data-tier="7"] .tier-numeral {
+.tier-marker.final .tier-numeral {
+    font-size: 2rem;
     color: var(--void);
 }
 
+.tier[data-tier="7"] {
+    opacity: 1;
+}
+
+/* Tier info */
 .tier-info h4 {
     font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 0.25rem;
 }
 
 .tier-info p {
     color: var(--text-muted);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    max-width: 200px;
 }
 
-.tier-line {
-    position: absolute;
-    left: 30px;
-    top: 100%;
-    width: 1px;
-    height: 100%;
-    background: linear-gradient(180deg, var(--stone), var(--gold));
-    opacity: 0.3;
+.tier.left .tier-info p,
+.tier.right .tier-info p {
+    max-width: 180px;
 }
 
-.tier:last-child .tier-line {
-    display: none;
+.tier.center .tier-info p {
+    max-width: 280px;
+    margin: 0 auto;
 }
 
 /* Ascension Visual */
@@ -1319,36 +1447,96 @@ h1, h2, h3, h4 {
         font-size: 0.85rem;
     }
 
-    /* Ascension */
+    /* Ascension / Path */
     .ascension {
         padding: var(--space-2xl) var(--space-md);
     }
 
+    .path-container {
+        padding: var(--space-md) 0;
+    }
+
+    .path-line {
+        left: 30px;
+        transform: none;
+    }
+
     .tier {
-        grid-template-columns: 45px 1fr;
-        gap: var(--space-sm);
-        padding: var(--space-sm) 0;
+        padding: var(--space-md) 0;
+        padding-left: 60px;
+        padding-right: 0;
+    }
+
+    .tier.left,
+    .tier.right {
+        padding-left: 70px;
+        padding-right: 0;
+    }
+
+    .tier.left .tier-content,
+    .tier.right .tier-content {
+        justify-content: flex-start;
+        text-align: left;
+        flex-direction: row;
+    }
+
+    .tier.left .tier-info {
+        order: 2;
+    }
+
+    .tier.left .tier-marker {
+        order: 1;
+    }
+
+    .tier-connector {
+        display: none;
     }
 
     .tier-marker {
-        width: 45px;
-        height: 45px;
+        width: 40px;
+        height: 40px;
     }
 
     .tier-numeral {
-        font-size: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .tier-marker.final {
+        width: 60px;
+        height: 60px;
+    }
+
+    .tier-marker.final .tier-numeral {
+        font-size: 1.5rem;
+    }
+
+    .tier.center {
+        padding-left: 70px;
+    }
+
+    .tier.center .tier-content {
+        flex-direction: row;
+        text-align: left;
+    }
+
+    .tier.center .tier-info {
+        margin-top: 0;
+        margin-left: var(--space-md);
     }
 
     .tier-info h4 {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .tier-info p {
         font-size: 0.8rem;
+        max-width: none;
     }
 
-    .tier-line {
-        left: 22px;
+    .tier.left .tier-info p,
+    .tier.right .tier-info p,
+    .tier.center .tier-info p {
+        max-width: none;
     }
 
     /* Tenets */

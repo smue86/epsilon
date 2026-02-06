@@ -209,14 +209,25 @@ style.textContent = `
     }
 
     .tier {
-        opacity: 0.3;
-        transform: translateX(-20px);
-        transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        opacity: 0;
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .tier.left {
+        transform: translateX(-30px);
+    }
+
+    .tier.right {
+        transform: translateX(30px);
+    }
+
+    .tier.center {
+        transform: translateY(20px);
     }
 
     .tier.animate-in {
         opacity: 0.5;
-        transform: translateX(0);
+        transform: translateX(0) translateY(0);
     }
 
     .tier[data-tier="7"].animate-in {
