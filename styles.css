@@ -92,6 +92,13 @@ body {
     background-size: 60px 60px;
 }
 
+@media (max-width: 600px) {
+    .grid-overlay {
+        background-size: 40px 40px;
+        opacity: 0.02;
+    }
+}
+
 /* Typography */
 h1, h2, h3, h4 {
     font-family: var(--font-display);
@@ -556,17 +563,18 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1200px) and (min-width: 769px) {
     .disciplines-grid {
-        grid-template-columns: repeat(5, minmax(200px, 1fr));
+        grid-template-columns: repeat(5, minmax(180px, 1fr));
         overflow-x: auto;
         padding-bottom: var(--space-md);
         scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
     }
 
     .discipline-card {
         scroll-snap-align: start;
-        min-width: 220px;
+        min-width: 200px;
     }
 }
 
@@ -1083,21 +1091,67 @@ h1, h2, h3, h4 {
 /* Responsive */
 @media (max-width: 900px) {
     .hero-stats {
-        flex-direction: column;
+        flex-direction: row;
         gap: var(--space-md);
     }
 
     .stat-divider {
-        width: 40px;
-        height: 1px;
+        width: 1px;
+        height: 30px;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
     }
 
     .form-row {
         grid-template-columns: 1fr;
     }
+
+    .manifesto {
+        padding: var(--space-2xl) var(--space-lg);
+    }
+
+    .manifesto::before,
+    .manifesto::after {
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Disciplines - stack vertically on tablet/mobile */
+    .disciplines-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+        overflow-x: visible;
+    }
+
+    .discipline-card {
+        min-width: unset;
+        scroll-snap-align: unset;
+    }
+
+    .discipline-traits {
+        gap: var(--space-xs);
+    }
+
+    .discipline-traits span {
+        padding: 0.25rem 0.6rem;
+        font-size: 0.7rem;
+    }
 }
 
 @media (max-width: 600px) {
+    :root {
+        --space-xl: 3rem;
+        --space-2xl: 4rem;
+        --space-3xl: 6rem;
+    }
+
     .nav {
         padding: var(--space-sm) var(--space-md);
     }
@@ -1106,28 +1160,200 @@ h1, h2, h3, h4 {
         display: none;
     }
 
+    .nav-cta {
+        padding: 0.5rem 1rem;
+        font-size: 0.75rem;
+    }
+
     .brand-text {
         display: none;
     }
 
+    .epsilon-mark {
+        font-size: 1.75rem;
+    }
+
+    /* Hero adjustments */
+    .hero {
+        min-height: 100svh;
+    }
+
     .hero-content {
+        padding: var(--space-md);
+        padding-top: 80px;
+    }
+
+    .hero-prelude {
+        gap: var(--space-sm);
+        margin-bottom: var(--space-md);
+    }
+
+    .hero-prelude .line {
+        width: 30px;
+    }
+
+    .prelude-text {
+        font-size: 0.65rem;
+        letter-spacing: 0.15em;
+    }
+
+    .title-the {
+        font-size: 0.8rem;
+        letter-spacing: 0.3em;
+    }
+
+    .title-main {
+        font-size: clamp(2.8rem, 15vw, 4rem);
+        letter-spacing: 0.05em;
+    }
+
+    .title-sub {
+        font-size: clamp(1rem, 5vw, 1.5rem);
+        letter-spacing: 0.2em;
+    }
+
+    .hero-tagline {
+        font-size: 1rem;
+        margin-bottom: var(--space-lg);
+        padding: 0 var(--space-sm);
+    }
+
+    .hero-cta {
+        margin-bottom: var(--space-xl);
+    }
+
+    .btn-primary {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+    }
+
+    .hero-stats {
+        gap: var(--space-sm);
+    }
+
+    .stat-value {
+        font-size: 1.3rem;
+    }
+
+    .stat-label {
+        font-size: 0.6rem;
+        letter-spacing: 0.1em;
+    }
+
+    .stat-divider {
+        height: 25px;
+    }
+
+    .scroll-indicator {
+        bottom: var(--space-md);
+    }
+
+    .scroll-line {
+        height: 40px;
+    }
+
+    /* Manifesto */
+    .manifesto {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .manifesto blockquote {
+        font-size: 1.2rem;
+    }
+
+    .manifesto-decoration {
+        margin-top: var(--space-md);
+    }
+
+    .greek-key {
+        width: 80px;
+        height: 8px;
+    }
+
+    /* Section headers */
+    .section-header {
+        margin-bottom: var(--space-xl);
+    }
+
+    .section-numeral {
+        width: 35px;
+        height: 35px;
+        line-height: 33px;
+        font-size: 0.8rem;
+    }
+
+    .section-header h2 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .section-subtitle {
+        font-size: 0.95rem;
+        padding: 0 var(--space-sm);
+    }
+
+    /* Disciplines */
+    .disciplines {
+        padding: var(--space-2xl) var(--space-md);
+    }
+
+    .discipline-card {
         padding: var(--space-md);
     }
 
-    .disciplines,
-    .ascension,
-    .enter {
+    .discipline-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .discipline-title {
+        font-size: 1.3rem;
+    }
+
+    .discipline-alias {
+        font-size: 0.8rem;
+        margin-bottom: var(--space-sm);
+    }
+
+    .discipline-desc {
+        font-size: 0.85rem;
+    }
+
+    /* Ascension */
+    .ascension {
         padding: var(--space-2xl) var(--space-md);
     }
 
     .tier {
-        grid-template-columns: 50px 1fr;
-        gap: var(--space-md);
+        grid-template-columns: 45px 1fr;
+        gap: var(--space-sm);
+        padding: var(--space-sm) 0;
     }
 
     .tier-marker {
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .tier-numeral {
+        font-size: 1rem;
+    }
+
+    .tier-info h4 {
+        font-size: 1.2rem;
+    }
+
+    .tier-info p {
+        font-size: 0.8rem;
+    }
+
+    .tier-line {
+        left: 22px;
+    }
+
+    /* Tenets */
+    .tenets {
+        padding: var(--space-lg) var(--space-md);
     }
 
     .tenets-content {
@@ -1136,7 +1362,97 @@ h1, h2, h3, h4 {
         gap: var(--space-md);
     }
 
+    .tenet-symbol {
+        font-size: 1.2rem;
+    }
+
+    .tenet p {
+        font-size: 0.95rem;
+    }
+
+    /* Enter */
+    .enter {
+        padding: var(--space-2xl) var(--space-md);
+    }
+
     .enter-container {
         padding: var(--space-lg);
+    }
+
+    .enter-decoration .corner {
+        width: 20px;
+        height: 20px;
+    }
+
+    .enter-prelude {
+        font-size: 0.7rem;
+    }
+
+    .enter h2 {
+        font-size: 1.8rem;
+    }
+
+    .enter-content > p {
+        font-size: 0.9rem;
+        margin-bottom: var(--space-lg);
+    }
+
+    .form-group label {
+        font-size: 0.7rem;
+    }
+
+    .enter-form input,
+    .enter-form textarea {
+        padding: 0.85rem;
+        font-size: 16px; /* Prevents iOS zoom on focus */
+    }
+
+    .btn-submit {
+        padding: 1rem;
+        font-size: 0.8rem;
+    }
+
+    /* Footer */
+    .footer {
+        padding: var(--space-xl) var(--space-md);
+    }
+
+    .epsilon-mark.large {
+        font-size: 3rem;
+    }
+
+    .footer-motto .latin {
+        font-size: 1.1rem;
+    }
+
+    .footer-motto .translation {
+        font-size: 0.8rem;
+    }
+}
+
+/* Extra small devices */
+@media (max-width: 380px) {
+    .title-main {
+        font-size: 2.5rem;
+    }
+
+    .title-sub {
+        font-size: 0.9rem;
+        letter-spacing: 0.15em;
+    }
+
+    .hero-stats {
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+
+    .stat-divider {
+        width: 30px;
+        height: 1px;
+    }
+
+    .btn-primary {
+        padding: 0.7rem 1.2rem;
+        font-size: 0.75rem;
     }
 }
