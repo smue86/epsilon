@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Epsilon Protocol</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <div class="grid-overlay"></div>
+
+    <nav class="nav">
+        <div class="nav-brand">
+            <div class="epsilon-mark">ε</div>
+            <span class="brand-text">EPSILON</span>
+        </div>
+        <div class="nav-links">
+            <a href="#disciplines">The Five</a>
+            <a href="#path">The Path</a>
+            <a href="#enter" class="nav-cta">Enter the Arena</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg">
+            <div class="geometric-lines">
+                <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice">
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#C9A227;stop-opacity:0.6" />
+                            <stop offset="50%" style="stop-color:#D4AF37;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#8B7021;stop-opacity:0.4" />
+                        </linearGradient>
+                    </defs>
+                    <line x1="0" y1="400" x2="1200" y2="400" class="h-line" />
+                    <line x1="600" y1="0" x2="600" y2="800" class="v-line" />
+                    <line x1="0" y1="0" x2="1200" y2="800" class="d-line" />
+                    <line x1="1200" y1="0" x2="0" y2="800" class="d-line" />
+                    <circle cx="600" cy="400" r="200" class="center-circle" />
+                    <circle cx="600" cy="400" r="280" class="outer-circle" />
+                    <polygon points="600,200 780,500 420,500" class="triangle" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-prelude">
+                <span class="line"></span>
+                <span class="prelude-text">A Decentralized Meritocratic Order</span>
+                <span class="line"></span>
+            </div>
+
+            <h1 class="hero-title">
+                <span class="title-the">THE</span>
+                <span class="title-main">EPSILON</span>
+                <span class="title-sub">PROTOCOL</span>
+            </h1>
+
+            <p class="hero-tagline">
+                Gain cannot be bought. Only earned.
+            </p>
+
+            <div class="hero-cta">
+                <a href="#enter" class="btn-primary">
+                    <span class="btn-text">Begin Your Ascent</span>
+                    <span class="btn-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 19V5M5 12l7-7 7 7"/>
+                        </svg>
+                    </span>
+                </a>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-value">V</span>
+                    <span class="stat-label">Disciplines</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">VII</span>
+                    <span class="stat-label">Tiers</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat">
+                    <span class="stat-value">∞</span>
+                    <span class="stat-label">Potential</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span>DESCEND</span>
+        </div>
+    </header>
+
+    <section class="manifesto">
+        <div class="manifesto-content">
+            <blockquote>
+                <p>
+                    By blending <em>ancient philosophy</em> with <em>modern technology</em>,
+                    Epsilon provides a structured path for men to ascend from
+                    <strong>uninitiated novices</strong> to <strong>manifested men</strong>.
+                </p>
+            </blockquote>
+            <div class="manifesto-decoration">
+                <span class="greek-key"></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="disciplines" class="disciplines">
+        <div class="section-header">
+            <span class="section-numeral">I</span>
+            <h2>The Five Disciplines</h2>
+            <p class="section-subtitle">
+                Transforming abstract ideals of honor, sacrifice, leadership, and wisdom
+                into tangible, modern-day reality.
+            </p>
+        </div>
+
+        <div class="disciplines-grid">
+            <article class="discipline-card" data-discipline="vitality">
+                <div class="card-glow"></div>
+                <div class="card-border"></div>
+                <div class="card-content">
+                    <div class="discipline-icon">
+                        <svg viewBox="0 0 60 60">
+                            <path d="M30 5 L30 55" stroke="currentColor" stroke-width="2"/>
+                            <path d="M15 20 L30 5 L45 20" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="30" r="8" fill="currentColor" opacity="0.3"/>
+                            <path d="M20 35 L30 25 L40 35 L30 45 Z" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="discipline-numeral">I</span>
+                    <h3 class="discipline-title">Vitality</h3>
+                    <span class="discipline-alias">The Vessel</span>
+                    <p class="discipline-desc">
+                        Forging a body that is resilient, dangerous when necessary,
+                        and hardened against decay through verified physical exertion.
+                    </p>
+                    <div class="discipline-traits">
+                        <span>Strength</span>
+                        <span>Endurance</span>
+                        <span>Combat</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="discipline-card" data-discipline="sovereignty">
+                <div class="card-glow"></div>
+                <div class="card-border"></div>
+                <div class="card-content">
+                    <div class="discipline-icon">
+                        <svg viewBox="0 0 60 60">
+                            <rect x="15" y="25" width="30" height="25" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M10 25 L30 10 L50 25" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="25" y="35" width="10" height="15" fill="currentColor" opacity="0.5"/>
+                            <circle cx="30" cy="20" r="3" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="discipline-numeral">II</span>
+                    <h3 class="discipline-title">Sovereignty</h3>
+                    <span class="discipline-alias">The Provider</span>
+                    <p class="discipline-desc">
+                        Achieving professional mastery and financial autonomy to secure
+                        the Oikos and eliminate external leverage.
+                    </p>
+                    <div class="discipline-traits">
+                        <span>Mastery</span>
+                        <span>Resources</span>
+                        <span>Independence</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="discipline-card" data-discipline="intellect">
+                <div class="card-glow"></div>
+                <div class="card-border"></div>
+                <div class="card-content">
+                    <div class="discipline-icon">
+                        <svg viewBox="0 0 60 60">
+                            <circle cx="30" cy="25" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M30 37 L30 50" stroke="currentColor" stroke-width="2"/>
+                            <path d="M22 50 L38 50" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="30" cy="25" r="5" fill="currentColor" opacity="0.5"/>
+                            <path d="M25 22 L30 17 L35 22" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="discipline-numeral">III</span>
+                    <h3 class="discipline-title">Intellect</h3>
+                    <span class="discipline-alias">The Sage</span>
+                    <p class="discipline-desc">
+                        Sharpening the mind through critical study and skill acquisition
+                        to navigate with strategic clarity rather than emotional reaction.
+                    </p>
+                    <div class="discipline-traits">
+                        <span>Reason</span>
+                        <span>Strategy</span>
+                        <span>Knowledge</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="discipline-card" data-discipline="kinship">
+                <div class="card-glow"></div>
+                <div class="card-border"></div>
+                <div class="card-content">
+                    <div class="discipline-icon">
+                        <svg viewBox="0 0 60 60">
+                            <circle cx="20" cy="25" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="40" cy="25" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M24 32 Q30 40 36 32" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="45" r="6" fill="currentColor" opacity="0.5"/>
+                            <path d="M20 25 L40 25" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2"/>
+                        </svg>
+                    </div>
+                    <span class="discipline-numeral">IV</span>
+                    <h3 class="discipline-title">Kinship</h3>
+                    <span class="discipline-alias">The Bond</span>
+                    <p class="discipline-desc">
+                        Cultivating deep loyalty, romantic leadership, and active service
+                        to one's circle, placing responsibility above the self.
+                    </p>
+                    <div class="discipline-traits">
+                        <span>Loyalty</span>
+                        <span>Leadership</span>
+                        <span>Service</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="discipline-card" data-discipline="will">
+                <div class="card-glow"></div>
+                <div class="card-border"></div>
+                <div class="card-content">
+                    <div class="discipline-icon">
+                        <svg viewBox="0 0 60 60">
+                            <path d="M30 10 L30 50" stroke="currentColor" stroke-width="3"/>
+                            <path d="M20 20 L30 10 L40 20" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="30" cy="30" r="15" stroke="currentColor" stroke-width="1" fill="none" stroke-dasharray="4 4"/>
+                            <rect x="27" y="27" width="6" height="6" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="discipline-numeral">V</span>
+                    <h3 class="discipline-title">Will</h3>
+                    <span class="discipline-alias">The Stoic</span>
+                    <p class="discipline-desc">
+                        Absolute mastery over impulses, fear, and comfort through
+                        voluntary hardship and temperance.
+                    </p>
+                    <div class="discipline-traits">
+                        <span>Discipline</span>
+                        <span>Temperance</span>
+                        <span>Fortitude</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="path" class="ascension">
+        <div class="section-header">
+            <span class="section-numeral">II</span>
+            <h2>The Path of Ascension</h2>
+            <p class="section-subtitle">
+                Members unlock higher tiers of access, networking, and influence
+                only by proving their discipline in the arena of life.
+            </p>
+        </div>
+
+        <div class="tier-ladder">
+            <div class="tier" data-tier="7">
+                <div class="tier-marker">
+                    <span class="tier-numeral">VII</span>
+                </div>
+                <div class="tier-info">
+                    <h4>Archon</h4>
+                    <p>The manifested. Council of the Order.</p>
+                </div>
+                <div class="tier-line"></div>
+            </div>
+
+            <div class="tier" data-tier="6">
+                <div class="tier-marker">
+                    <span class="tier-numeral">VI</span>
+                </div>
+                <div class="tier-info">
+                    <h4>Praetor</h4>
+                    <p>Guardian and mentor to those ascending.</p>
+                </div>
+                <div class="tier-line"></div>
+            </div>
+
+            <div class="tier" data-tier="5">
+                <div class="tier-marker">
+                    <span class="tier-numeral">V</span>
+                </div>
+                <div class="tier-info">
+                    <h4>Centurion</h4>
+                    <p>Proven across all five disciplines.</p>
+                </div>
+                <div class="tier-line"></div>
+            </div>
+
+            <div class="tier" data-tier="4">
+                <div class="tier-marker">
+                    <span class="tier-numeral">IV</span>
+                </div>
+                <div class="tier-info">
+                    <h4>Legionary</h4>
+                    <p>The committed. Trials intensify.</p>
+                </div>
+                <div class="tier-line"></div>
+            </div>
+
+            <div class="tier" data-tier="3">
+                <div class="tier-marker">
+                    <span class="tier-numeral">III</span>
+                </div>
+                <div class="tier-info">
+                    <h4>Vanguard</h4>
+                    <p>First trials completed. The path revealed.</p>
+                </div>
+                <div class="tier-line"></div>
+            </div>
+
+            <div class="tier" data-tier="2">
+                <div class="tier-marker">
+                    <span class="tier-numeral">II</span>
+                </div>
+                <div class="tier-info">
+                    <h4>Initiate</h4>
+                    <p>Accepted into the Protocol.</p>
+                </div>
+                <div class="tier-line"></div>
+            </div>
+
+            <div class="tier" data-tier="1">
+                <div class="tier-marker">
+                    <span class="tier-numeral">I</span>
+                </div>
+                <div class="tier-info">
+                    <h4>Aspirant</h4>
+                    <p>The uninitiated. Ready to begin.</p>
+                </div>
+                <div class="tier-line"></div>
+            </div>
+        </div>
+
+        <div class="ascension-visual">
+            <div class="pillar left"></div>
+            <div class="pillar right"></div>
+            <div class="ascension-glow"></div>
+        </div>
+    </section>
+
+    <section class="tenets">
+        <div class="tenets-content">
+            <div class="tenet">
+                <span class="tenet-symbol">⊕</span>
+                <p>Action over intention</p>
+            </div>
+            <div class="tenet">
+                <span class="tenet-symbol">⊗</span>
+                <p>Proof over promise</p>
+            </div>
+            <div class="tenet">
+                <span class="tenet-symbol">⊙</span>
+                <p>Earned, never given</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="enter" class="enter">
+        <div class="enter-container">
+            <div class="enter-decoration">
+                <div class="corner tl"></div>
+                <div class="corner tr"></div>
+                <div class="corner bl"></div>
+                <div class="corner br"></div>
+            </div>
+
+            <div class="enter-content">
+                <span class="enter-prelude">The Arena Awaits</span>
+                <h2>Enter the Protocol</h2>
+                <p>
+                    This is not a community to join. It is an order to earn entry into.
+                    Begin as an Aspirant. Prove yourself through trials.
+                    Ascend through merit alone.
+                </p>
+
+                <form class="enter-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Designation</label>
+                            <input type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Contact Vector</label>
+                            <input type="email" placeholder="Your email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Declaration of Intent</label>
+                        <textarea placeholder="Why do you seek entry? What drives your pursuit of betterment?" rows="4"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text">Submit for Consideration</span>
+                        <span class="btn-line"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="epsilon-mark large">ε</div>
+                <p>The Epsilon Protocol</p>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-motto">
+                <p class="latin">Per aspera ad astra</p>
+                <p class="translation">Through hardship to the stars</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
