@@ -702,7 +702,7 @@ h1, h2, h3, h4 {
 }
 
 .path-container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
     position: relative;
     padding: var(--space-xl) 0;
@@ -730,8 +730,8 @@ h1, h2, h3, h4 {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     background: var(--stone);
     border-radius: 50%;
 }
@@ -749,9 +749,11 @@ h1, h2, h3, h4 {
 /* Tier base styles */
 .tier {
     position: relative;
-    padding: var(--space-lg) 0;
+    padding: var(--space-md) 0;
     opacity: 0.5;
     transition: all 0.4s var(--ease-out);
+    display: flex;
+    width: 100%;
 }
 
 .tier:hover {
@@ -762,16 +764,18 @@ h1, h2, h3, h4 {
     display: flex;
     align-items: center;
     gap: var(--space-md);
+    width: calc(50% - 40px);
 }
 
 /* Left-aligned tiers */
 .tier.left {
-    padding-right: 55%;
+    justify-content: flex-start;
 }
 
 .tier.left .tier-content {
     justify-content: flex-end;
     text-align: right;
+    margin-right: 40px;
 }
 
 .tier.left .tier-info {
@@ -784,24 +788,29 @@ h1, h2, h3, h4 {
 
 /* Right-aligned tiers */
 .tier.right {
-    padding-left: 55%;
+    justify-content: flex-end;
 }
 
 .tier.right .tier-content {
     justify-content: flex-start;
     text-align: left;
+    margin-left: 40px;
 }
 
 /* Center tier (Epsilon) */
 .tier.center {
     padding: var(--space-xl) 0;
     opacity: 1;
+    justify-content: center;
 }
 
 .tier.center .tier-content {
     flex-direction: column;
     text-align: center;
     justify-content: center;
+    align-items: center;
+    width: auto;
+    margin: 0;
 }
 
 .tier.center .tier-info {
@@ -812,28 +821,24 @@ h1, h2, h3, h4 {
 .tier-connector {
     position: absolute;
     top: 50%;
-    height: 1px;
-    background: linear-gradient(90deg, var(--gold), transparent);
+    height: 2px;
+    width: 40px;
     opacity: 0.3;
     transition: opacity 0.4s var(--ease-out);
 }
 
 .tier.left .tier-connector {
-    right: 50%;
-    left: auto;
-    width: 5%;
+    left: calc(50% - 40px);
     background: linear-gradient(90deg, transparent, var(--gold));
 }
 
 .tier.right .tier-connector {
-    left: 50%;
-    right: auto;
-    width: 5%;
+    right: calc(50% - 40px);
     background: linear-gradient(90deg, var(--gold), transparent);
 }
 
 .tier:hover .tier-connector {
-    opacity: 0.6;
+    opacity: 0.7;
 }
 
 /* Tier marker */
